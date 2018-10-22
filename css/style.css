@@ -1,0 +1,644 @@
+/* CSS based on https://github.com/kevin-powell/How-to-build-a-responsive-website-from-scratch */
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,900');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 95%;
+  max-width: 70em;
+  margin: 0 auto;
+}
+
+.clearfix::after,
+section::after,
+footer::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* typography
+=================== */
+
+h1 {
+  font-weight: 300;
+  font-size: 1.7rem;
+  margin-top: 0;
+}
+
+h2,h3,h4,h5,h6 {
+  font-weight: 300;
+}
+
+@media (min-width: 25rem) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 60rem) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+p {
+  margin-top: 0;
+  line-height: 1.5;
+}
+
+p:last-of-type {
+  margin-bottom: 0;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1em;
+  font-weight: 900;
+  margin-top: 1em;
+}
+
+.title span {
+  font-weight: 300;
+  display: block;
+  font-size: .9em;
+}
+
+@media (min-width:60rem) {
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .title {
+    font-size: 3.7rem;
+  }
+}
+
+/* buttons */
+
+.button {
+  display: inline-block;
+  font-size: 1.15rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-width: 2px;
+  border-style: solid;
+  padding: .5em 1.75em;
+  color: white;
+  border-color: #315792;
+}
+
+@media (min-width: 60rem) {
+  .button {
+    font-size: 1.5rem;
+  }
+}
+
+.button:hover,
+.button:focus {
+  background: #315792;
+  color: white;
+}
+
+/* Parallax
+=================== */
+.parallax--bg,
+.parallax--box {
+  transition: initial;
+}
+
+/* header
+=================== */
+/* Navbar based on https://codepen.io/kevinpowell/pen/PWNwZm Author: Kevin Powell*/
+header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 2em;
+}
+
+header::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.logo {
+  float: left;
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.site-nav {
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  background: white;
+  clip-path: circle(0px at top right);
+  transition: clip-path ease-in-out 700ms;
+  width: 100%;
+}
+
+.site-nav--open {
+  clip-path: circle(250% at top right);
+}
+
+.site-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav li {
+  border-bottom: 1px solid #575766;
+}
+
+.site-nav li:last-child {
+  border-bottom: none;
+}
+
+.site-nav a {
+  font-weight: 900;
+  font-size: .8rem;
+  display: block;
+  padding: 2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #444;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  background: transparent;
+  color: rgb(140, 193, 193);
+}
+
+.menu-toggle {
+  position: absolute;
+  top: 1.3em;
+  right: .1em;
+  cursor: pointer;
+}
+
+/* Hamburger menu icon from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_icon_js */
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+/* medium screen */
+@media (min-width: 831px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    height: auto;
+    position: relative;
+    background: transparent;
+    float: right;
+    clip-path: initial;
+    width: auto;
+  }
+
+  .site-nav li {
+    display: inline-block;
+    border: none;
+  }
+
+  .site-nav a {
+    padding: 0;
+    margin-left: 3em;
+    color: white;
+    min-width: auto;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: transparent;
+    color: #ddd;
+  }
+}
+
+
+/* hero
+=================== */
+/* Hero image from https://www.pexels.com/photo/midsection-of-woman-making-heart-shape-with-hands-256737/ */
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../images/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.h-half {
+  height: 25vh;
+}
+
+.hero2 {
+  padding: 13em 0;
+  color: #FFF;
+}
+
+.hero-s {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../images/hero-s.jpg);
+}
+
+/* small screen */
+@media (max-width: 385px) {
+  .hero2 {
+    padding: 10em 0;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .title span {
+    font-size: .9em;
+  }
+}
+
+/* medium screen */
+@media (min-width: 60rem) {
+  .hero2 {
+    height: 100vh;
+    padding-top: 15%; /*20vh*/
+  }
+}
+
+/* landscape on small devices */
+@media only screen
+and (max-device-width: 600px)
+and (orientation: landscape) {
+  .hero2 {
+    padding: 6.5em 0;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .title span {
+    font-size: .9em;
+  }
+}
+
+/* landscape on bigger smartphones */
+@media only screen
+and (min-device-width: 601px)
+and (max-device-width: 800px)
+and (orientation: landscape) {
+  .hero2 {
+    padding: 8em 0;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .title span {
+    font-size: .9em;
+  }
+}
+
+/* Footer
+=================== */
+
+footer {
+  background: #232323;
+  color: #fff;
+  text-align: left;
+  padding: 1em 0;
+}
+
+.statement {
+  padding-top: 1em;
+}
+
+.statement p {
+  text-align: right;
+  font-size: 0.8em;
+  line-height: 1;
+}
+
+.footer-logo {
+  border-radius: 50%;
+  width: 4em;
+  height: 4em;
+  float: left;
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+}
+
+.login-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin-right: 0.5em
+}
+
+
+/* home page
+=================== */
+
+.rounded {
+  border-radius: 50%;
+  width: 85%;
+  max-width: 350px;
+  height: 85%;
+  max-height: 350px;
+  margin-bottom: 1em;
+}
+
+.img-caption {
+  width: auto;
+  text-align: center;
+  padding-bottom: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+/* About me
+=================== */
+
+.me-logo {
+  border-radius: 50%;
+  width: 45%;
+  height: 45%;
+  margin-bottom: 3em;
+}
+
+.me-img {
+  float:left;
+  margin-right: 2em;
+  margin-bottom: 2em;
+}
+
+@media (max-width: 550px) {
+  .me-img {
+    float: none;
+    margin-right: 0;
+  }
+}
+
+.me-content {
+  text-align: justify;
+  margin-left: 0 !important;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+/* Contact and booking
+=================== */
+
+#map {
+  height: 60vh;
+  width: 100%;
+}
+
+.address {
+  text-align: left;
+  width: auto;
+  padding: 0 2em 0 2em;
+  line-height: 1.75em;
+}
+
+form {
+  text-align: left;
+  padding: 0 2em 0 2em;
+  width: auto;
+}
+
+.contact-content {
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-left: 0 !important;
+}
+
+/* Styling based on http://lamp.scim.brad.ac.uk:50710/week10/form3.html */
+
+input[type=text], input[type=email], input[type=tel], input[type=date], input[type=password], input[type=url], input[type=search], input[type=number], input[list=browsers], textarea {
+  width: 60vw;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1em;
+  border-radius: 4px;
+  border: 1px solid #999;
+  padding: 6px 6px 8px 6px;
+}
+
+input[type=text], input[type=email], input[type=tel], input[type=date], input[type=password], input[type=url], input[type=search], input[type=number], input[list=browsers] {
+  margin: 5px 0 0 0;
+}
+
+input[type=submit], input[type=reset] {
+  margin: 9px 0px;
+  padding: 8px 18px;
+  font-size: 1em;
+  background: #315792;
+  border: 1px solid #315792;
+  color: white;
+  cursor: pointer;
+  clear: left;
+}
+
+input[type=submit]:hover,
+input[type=reset]:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input:focus, textarea:focus {
+  border-color: #000;
+}
+
+@media (min-width: 1281px) { /*1045*/
+  input[type=text], input[type=email], input[type=tel], input[type=date], input[type=password], input[type=url], input[type=search], input[type=number], input[list=browsers] {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  input[type=text], input[type=email], input[type=tel], input[type=date], input[type=password], input[type=url], input[type=search], input[type=number], input[list=browsers] {
+    margin-bottom: 15px;
+  }
+}
+
+textarea {
+  height: 20vh;
+  margin: 5px 0 1em 0;
+}
+
+.mandatory {
+  color: red
+}
+
+select {
+width: 214px;
+padding: 6px 6px 8px 6px;
+margin: 5px 0px;
+font-family: 'Raleway', sans-serif;
+font-size: 1em;
+border-radius: 4px;
+border: 1px solid #ccc;
+}
+
+/* Gallery
+=================== */
+
+.img-gallery:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+/* Booking
+=================== */
+
+.book-content {
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-left: 0 !important;
+}
+
+.error {
+  min-height: 60vh;
+}
+
+.success {
+  min-height: 60vh;
+}
+
+/* Admin panel login
+====================== */
+
+.login {
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-left: 0 !important;
+  height: 40vh;
+}
+
+/* Making responsive data tables based on https://css-tricks.com/responsive-data-tables/ */
+/*
+Generic Styling, for Desktops/Laptops
+*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Zebra striping */
+tr:nth-of-type(odd) {
+  background: #eee;
+}
+
+th {
+  background: #315792;
+  color: white;
+  font-weight: bold;
+}
+
+td, th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+/*
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr { border: 1px solid #ccc; }
+
+	td {
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+	}
+
+	td:before {
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "ID"; }
+	td:nth-of-type(2):before { content: "First Name"; }
+	td:nth-of-type(3):before { content: "Last Name"; }
+	td:nth-of-type(4):before { content: "Phone num"; }
+	td:nth-of-type(5):before { content: "Email"; }
+	td:nth-of-type(6):before { content: "Date"; }
+	td:nth-of-type(7):before { content: "Information"; }
+}
+
+.admin-panel {
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-left: 0 !important;
+  min-height: 60vh;
+}
+
+.admin-panel > .title {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* To make it possible to use hamburger menu on smartphones as responsive table covers hamburger menu which makes it unclicable */
+@media (max-width: 820px) {
+  .admin-panel > table {
+    margin-top: 8em;
+  }
+
+  .admin-panel > .title {
+    margin-top: 3em;
+  }
+}

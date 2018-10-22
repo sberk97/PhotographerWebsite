@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>John Doe - Photography contact</title>
+  <meta name="description" content="John Doe - Photography contact">
+  <meta name="author" content="Sebastian Berk">
+  <meta name="keywords" content="John, Doe, John Doe, Photography">
+
+  <!-- Done by http://www.favicomatic.com -->
+  <!-- Icon made by Lucy G (https://www.flaticon.com/authors/lucy-g) from www.flaticon.com  -->
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/favicon/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicon/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicon/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicon/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16" />
+  <meta name="application-name" content="&nbsp;"/>
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png" />
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- Grid system from http://www.responsivegridsystem.com -->
+  <link rel="stylesheet" type="text/css" href="css/grid.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/script.js" async defer></script>
+</head>
+<!-- Hero, footer based on https://github.com/kevin-powell/How-to-build-a-responsive-website-from-scratch Author: Kevin Powell -->
+<!-- Navbar based on https://codepen.io/kevinpowell/pen/PWNwZm Author: Kevin Powell -->
+<body>
+  <div class="hero hero-s h-half parallax--bg">
+    <header>
+      <div class="container">
+        <!-- Icon made by Lucy G (https://www.flaticon.com/authors/lucy-g) from www.flaticon.com  -->
+        <a href="index.html"><img src="images/logo.png" alt="John Doe - Photography Logo" class="logo"></a>
+        <nav class="site-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="book.html">Book a Photoshoot</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <!-- Hamburger menu icon from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_icon_js -->
+        <div class="menu-toggle" onclick="hamburger(this);">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="section group">
+    <h1 class="title">CONTACT ME</h1>
+    <p class="img-caption">I am very happy to answer your questions! Just send me an email by using contact form below.</p>
+    <div class="col span_8_of_12 contact-content">
+      <form action="mailto:contact@johndoe.co.uk" method="post" enctype="text/plain">
+          <label for="name">YOUR NAME <strong class="mandatory">*</strong></label>
+          <br /><input type="text" required autofocus id="name" name="user_name" placeholder="Name" />
+
+          <br /><label for="mail">YOUR EMAIL <strong class="mandatory">*</strong></label><br />
+          <input type="email" required id="mail" name="user_email" placeholder="your@email.com" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" />
+
+          <br /><label for="msg">SUBJECT <strong class="mandatory">*</strong></label><br />
+          <input type="text" required id="subject" name="user_subject" placeholder="Your subject" />
+
+          <br /><label for="msg">YOUR MESSAGE <strong class="mandatory">*</strong></label><br />
+          <textarea id="msg" required name="user_message" placeholder="Your message"></textarea>
+
+          <br /><input type="submit" value="SUBMIT">
+      </form>
+    </div>
+
+    <div class="col span_4_of_12 contact-content">
+      <p class="address"><strong>EMAIL</strong><br />
+        contact@johndoe.co.uk<br />
+        <strong>PHONE</strong><br />
+        067 771 552 89<br /><br />
+        <!-- Address is fake -->
+        <strong>ADDRESS</strong><br />
+        91 Baldock Street,<br />
+        Newtown,<br />
+        CH3 1UJ,<br />
+        United Kingdom.</p>
+      </div>
+    </div>
+
+    <div class="section group">
+      <h1 class="title">FIND ME</h1>
+      <!-- After second refresh map is loading, probably something wrong with LAMP as it works right on my local computer -->
+      <div id="map"></div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <!-- Facebook logo taken from https://www.iconfinder.com/icons/194929/facebook_social_media_icon#size=256 Author: Neil Hainsworth-->
+        <a href="https://www.facebook.com"><img src="images/fb-logo-s.png" class="footer-logo" alt="Facebook logo" /></a>
+
+        <!-- Instagram logo taken from https://www.iconfinder.com/icons/194923/intsagram_social_media_icon#size=256 Author: Neil Hainsworth -->
+        <a href="https://www.instagram.com"><img src="images/insta-logo-s.png" class="footer-logo" alt="Instagram logo" /></a>
+
+        <!-- Twitter logo taken from https://www.iconfinder.com/icons/194909/social_media_twitter_icon#size=256 Author: Neil Hainsworth -->
+        <a href="https://www.twitter.com"><img src="images/twit-logo-s.png" class="footer-logo" alt="Twitter logo" /></a>
+        <div class="statement">
+          <a href="login.html" class="login-link"><p>Admin panel login</p></a>
+          <p>This website is entirely original work, and contains no plagiarised material.</p>
+          <p>Made by Sebastian Berk UB: </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Local Google Map API -->
+    <script src="js/js"></script>
+    <!-- Google Map API from the Internet with my API key -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyolkBtwDgiw6Jy1AUXq6xTQ_FIoJ3a8o"></script> -->
+    <!-- Map.js based on https://bootstrapious.com/p/google-maps-and-bootstrap-tutorial -->
+    <script src="js/map.js"></script>
+    <!-- Script based on https://github.com/kevin-powell/How-to-build-a-responsive-website-from-scratch Author: Kevin Powell -->
+    <script src="js/parallax.js" async defer></script>
+  </body>
+  </html>
