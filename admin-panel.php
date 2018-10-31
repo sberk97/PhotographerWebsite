@@ -156,12 +156,12 @@
                   $_SESSION['username'] = $username;
                 } else{
                   // Display an error message if password is not valid
-                  $passwordErr = 'The password you entered was not valid';
+                  $passwordErr = 'Incorrect username or password.';
                 }
               }
             } else{
               // Display an error message if username doesn't exist
-              $usernameErr = 'No account found with that username';
+              $usernameErr = 'Incorrect username or password.';
             }
           } else {
             echo '<div class="col span_2_of_12"></div><div class="col span_8_of_12 error"><p>Oops! Something went wrong. Please try again later.</p></div>';
